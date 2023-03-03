@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg)
+}
+
+.invert {
+    filter: invert(1) hue-rotate(180deg)
+}
+
+/* body {
+    background-color: rgb(10, 10, 10);
+} */
+body {
+    background-color: white;
+}
+.flex-align-right {
+    margin-left: auto;
+  }
+
+nav {
+    /* background-color: rgb(121, 31, 121); */
+    background-color: black;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    height: 74px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Toggle button */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 50px;
+    height: 26px;
+    background-color: whitesmoke;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    margin: 20px;
+    
+    font-size: 18px;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(33, 31, 31);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+
+.fa-moon {
+    color: rgb(246, 244, 246);
+}
+
+.fa-sun {
+    color: rgba(255, 166, 0, 0.916);
+}
+
+
+.heading {
+    margin-top: 5px;
+    color: #eb366f;
+    border: 4px dotted black;
+    width: 450px;
+}
+
+
+h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    margin-right: 50px;
+}
+
+
+
+.box {
+    font-size: 7vw;
+    cursor: pointer;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: rgba(124, 143, 103, 0.321);
+}
+
+.boxtext {
+    font-family: 'Varela Round', sans-serif;
+    color: green;
+}
+
+.info {
+    color: #0d9f28;
+    font-size: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 15px;
+}
+
+/* .gameInfo {
+    margin: 60px;
+} */
+
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 25px;
+    padding: 7px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #f9004d;
+    color: white;
+    position: relative;
+    left: 15px;
+}
+
+/* #cheer{
+    border: none;
+} */
+
+.playerX {
+    color: #0d9f28;
+}
+
+.playerO {
+    color: #3f75d2;
+}
+
+/* .line{
+    background-color: black;
+    width: 3px;
+    height: 20vw;
+} */
+/* .line{
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+} */
+
+.primary-btn {
+    height: 30px;
+    width: 70px;
+    margin: 10px;
+}
+
+.wingif {
+    right: 30px;
+    position: relative;
+}
+
+.draw-msg,
+.winner-msg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 173, 173, 0.938);
+}
+
+.draw-msg,
+.winner-msg {
+    display: none;
+}
+
+.draw-msg.show,
+.winner-msg.show {
+    display: flex;
+}
+
+
+
+@media screen and (max-width:850px) {
+    .gameContainer {
+        flex-wrap: wrap;
+        margin: 15px 80px 8px;
+    }
+ 
+    .heading {
+        font-size: 25px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 15vw);
+        grid-template-rows: repeat(3, 18w);
+    }
+}
