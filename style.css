@@ -92,7 +92,7 @@ nav ul {
 .heading {
     margin-top: 5px;
     color: #eb366f;
-    border: 4px dotted black;
+    /* border: 4px dotted black; */
     width: 450px;
 }
 
